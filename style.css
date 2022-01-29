@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 2500px;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #fd3838 74%);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: "Fira Sans", sans-serif;
+
+}
+
+.nav {
+    width: 100vw;
+    height: 15vh;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 22;
+}
+
+.brand {
+    position: absolute;
+    left: 5%;
+    color: white;
+    font-size: 2rem;
+}
+
+h1 {
+    margin-top: 10vh; 
+}
+
+.wrapper {
+    width: 20%;
+    height: 80%;
+    /* background-color: orangered; */
+    margin-right: 3%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.lang {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: olive;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+}
+
+.lang:hover {
+    transform: translateY(-10px);
+}
+
+.lang:active {
+    transform: scaleZ(1.1);
+}
+
+.float {
+    width: 10%;
+    height: 10%;
+    border-radius: 10px;
+    background-color: yellow;
+    position: absolute;
+    top: 91%;
+    left: 7.5%;
+    transition: .5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+.flag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Vote */
+
+.wrapperVote {
+    width: 500px;
+    height: 220px;
+    border: 2px solid #333;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    top: 1700px;
+    background-color: rgb(241 187 40 / 55%);
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    box-shadow: 0 0 10px #333;
+    background-color: rgb(221, 207, 207);
+}
+
+button:active {
+    box-shadow: 0 0 0 #333;
+    transform: translate(1px, 1px);
+    background-color: #fff;
+}
+
+#yesBtn {
+    margin-right: 10px;
+}
+
+.out {
+    width: 90%;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 7px;
+    margin-top: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+}
+
+.yes {
+    height: 100%;
+    width: 0;
+    background-color: green;
+    border-right: 2px solid #333;
+    text-align: center;
+    transition: .3s;
+    color: white;
+}
+
+.no {
+    height: 100%;
+    width: 0;
+    background-color: red;
+    /* border-left: 2px solid #333; */
+    text-align: center;
+    transition: .3s;
+    color: white;
+}
+
+.yesCub {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 5%;
+}
+
+/* .yesCub::after {
+    content: "+:";
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.noCub::after {
+    content: "-:";
+    margin-left: 30px;
+    font-size: 20px;
+
+} */
+
+.noCub {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 55%;
+    left: 5%;
+}
+
+.yesNum,
+.noNum {
+    position: absolute;
+    left: 170%;
+    /* top: 10%; */
+}
+
+/* .noNum {
+    left: 330%;
+    top: 7%;
+} */
+
+#one {
+    width: 60%;
+    height: 70%;
+    background-color: #333;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: absolute;
+    top: 800px;
+    left: 0%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: 1s;
+    padding: 50px;
+    color: white;
+}
+
+#one h2, #two h2 {
+    font-size: 3rem;
+    margin: 10px;
+}
+
+#one p, #two p {
+    font-size: 2rem;
+}
+
+#two {
+    width: 60%;
+    height: 75%;
+    background-color: #333;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    position: absolute;
+    top: 1400px;
+    left: 100%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: 1s;
+    padding: 50px;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .brand, .float {
+        display: none;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+
+    .wrapper {
+        width: 54%;
+    }
+
+    .lang {
+        margin-right: 5px;
+        padding: 30px;
+    }
+
+    .lang img {
+        width: 40px;
+    }
+
+    .kar img {
+        height: 30px;
+    }
+    body {
+        overflow-x: hidden;
+        height: 2400px;
+    }
+
+    #one {
+        width: 80%;
+        height: 65%;
+        background-color: #333;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        position: absolute;
+        top: 1000px;
+        left: 0%;
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: 1s;
+        padding: 20px;
+        color: white;
+    }
+    
+    #one h2, #two h2 {
+        font-size: 2rem;
+        margin: 10px;
+    }
+    
+    #one p, #two p {
+        font-size: 1.3rem;
+    }
+    
+    #two {
+        width: 80%;
+        height: 75%;
+        background-color: #333;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        position: absolute;
+        top: 1500px;
+        left: 100%;
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: 1s;
+        padding: 20px;
+        color: white;
+    }
+
+    .wrapperVote {
+        width: 300px;
+        height: 220px;
+        border: 2px solid #333;
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        top: 1300px;
+        background-color: rgb(241 187 40 / 55%);
+    }
+  }
+
+.wrapperVote h3 {
+    margin-bottom: 10px;
+}
+
+/* #two {
+    display: none;
+} */
